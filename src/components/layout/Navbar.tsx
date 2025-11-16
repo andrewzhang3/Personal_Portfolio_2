@@ -3,6 +3,7 @@ import logo from '../../assets/navbar_logo.webp';
 import { motion } from "motion/react";
 import { HamburgerMenu } from '../motion/HamburgerMenu';
 import { MobileMenu } from '../motion/MobileMenu';
+import useViewport from '../hooks/useViewport';
 
 const links = [
   { href: "#about", label: "About" },
@@ -14,6 +15,9 @@ const links = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isMobile } = useViewport();
+
+  const scrolledDesktop = !isMobile && isScrolled;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,7 +59,7 @@ export function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-3 ${
-        isScrolled
+        scrolledDesktop
           ? "bg-background/95 backdrop-blur-sm shadow-sm"
           : "bg-transparent"
       }`}>

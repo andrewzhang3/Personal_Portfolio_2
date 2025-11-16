@@ -77,6 +77,7 @@ export function About() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <motion.a
+              aria-label="Find me on Github"
               href="https://github.com/andrewzhang3"
               target="_blank"
               rel="noopener noreferrer"
@@ -86,6 +87,7 @@ export function About() {
               <FaGithub className="w-6 h-6" />
             </motion.a>
             <motion.a
+              aria-label="Find me on LinkedIn"
               href="https://www.linkedin.com/in/andrewziyezhang/"
               target="_blank"
               rel="noopener noreferrer"

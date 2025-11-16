@@ -31,6 +31,7 @@ export default function LinkPreview({ project, children }: { project: Project; c
   return (
     <>
       <motion.a
+        aria-label={`Find out more at ${project.title} website.`}
         ref={linkRef}
         target="_blank"
         rel="noopener noreferrer"

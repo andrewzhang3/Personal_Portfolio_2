@@ -7,17 +7,33 @@ import { Button } from '../components/motion/Button';
 import { FaRegEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export function Contact() {
+  const [status, setStatus] = useState("");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus("loading");
     // Handle form submission
     console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setStatus("success");
+    }
+    else {
+      setStatus("error");
+    }
+
+
     setFormData({ name: '', email: '', message: '' });
   };
 
@@ -156,6 +172,9 @@ export function Contact() {
               >
                 Send Message
               </Button>
+              {status === "loading" && <p>Sending…</p>}
+              {status === "success" && <p>Message successfully sent!</p>}
+              {status === "error" && <p>Something went wrong.</p>}
             </form>
           </motion.div>
         </div>

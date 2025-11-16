@@ -45,10 +45,10 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen px-6 py-24">
+    <section id="contact" className="min-h-screen px-6 py-24 overflow-x-hidden">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          className="mb-16"
+          className="mb-16 overflow-x-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -64,8 +64,9 @@ export function Contact() {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 overflow-x-hidden">
           <motion.div
+            className="overflow-x-hidden"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -113,6 +114,7 @@ export function Contact() {
           </motion.div>
 
           <motion.div
+            className="overflow-x-hidden"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

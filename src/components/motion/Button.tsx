@@ -23,7 +23,6 @@ export function Button({ children, className = '', sectionId, onClick, type = 'b
   };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(sectionId);
     if (sectionId) {
       scrollToSection(sectionId);
     }

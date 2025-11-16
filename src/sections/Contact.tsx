@@ -7,6 +7,7 @@ import { Button } from '../components/motion/Button';
 import { FaRegEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export function Contact() {
+  const date = new Date().getFullYear();
   const [status, setStatus] = useState("");
   const [formData, setFormData] = useState({
     name: '',
@@ -17,9 +18,8 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    // Handle form submission
-    console.log('Form submitted:', formData);
 
+    // Handle form submission
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -181,7 +181,7 @@ export function Contact() {
 
         <div className="mt-24 pt-12 border-t border-border text-center">
           <p className="text-secondary">
-            © 2025 Andrew Zhang. Built with React and Tailwind CSS.
+            © {date} Andrew Zhang. Passionate Fullstack Developer.
           </p>
         </div>
       </div>

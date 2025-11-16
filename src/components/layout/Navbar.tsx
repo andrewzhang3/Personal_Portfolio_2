@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logo from '../../assets/andrew_logo_6_transparent.png';
+import logo from '../../assets/navbar_logo.webp';
 import { motion } from "motion/react";
 import { HamburgerMenu } from '../motion/HamburgerMenu';
 import { MobileMenu } from '../motion/MobileMenu';

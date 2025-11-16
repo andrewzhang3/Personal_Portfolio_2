@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { Project } from '../components/motion/Project';
+import locumly_img from '../assets/locumly.webp';
+import covid19_img from '../assets/covid-19-au.webp';
 
 const projects = [
   {
@@ -8,7 +10,7 @@ const projects = [
       'A live marketplace connecting optometrists and clinics across Australia. Features include real-time messaging, job listings, and Twilio-powered SMS notifications.',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Twilio', 'Stripe'],
     demo: 'https://locumly.com.au/',
-    image: "/src/assets/locumly.png"
+    image: locumly_img
   },
   {
     title: 'WorkRex',
@@ -28,7 +30,7 @@ const projects = [
       'Collaborated with Monash University’s Faculty of Science to build a public COVID-19 tracking dashboard for research and public awareness, focusing on data visualization and responsive UI.',
     technologies: ['React', 'JavaScript', 'echarts', 'REST APIs'],
     demo: 'https://covid-19-au.com/about-us',
-    image: "/src/assets/covid-19-au.png"
+    image: covid19_img
   }
 ];
 

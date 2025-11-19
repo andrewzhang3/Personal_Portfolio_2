@@ -1,4 +1,7 @@
 import './index.css';
+
+import { Analytics } from '@vercel/analytics/react';
+
 import { Navbar } from './components/layout/Navbar';
 import { About } from './sections/About';
 import { Experiences } from './sections/Experiences';
@@ -16,6 +19,7 @@ function App() {
       <Experiences />
       <Projects />
       <Contact />
+      <Analytics />
     </div>
   )
 }
